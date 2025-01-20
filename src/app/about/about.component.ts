@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 export class AboutComponent {
   title = 'About us';
   description = 'Feel free to reach out!';
-  users = [{ name: 'Alice' }, { name: 'Bob' }, { name: 'Charlie' }];
 
   onSubmit() {
     console.log('Form submitted!');

@@ -1,5 +1,13 @@
-.containerLink a {
-  text-decoration: none;
-  color: #333;
+.containerLink {
+  display: flex;
+  gap: 10px;
   font-size: larger;
+}
+
+.containerLink button {
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  background: #333;
 }
