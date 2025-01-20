@@ -1,4 +1,7 @@
 <main>
+  <button (click)="toggleLogin()">
+    {{ authService.isAuthenticated() ? "Logout" : "Login" }}
+  </button>
   <nav class="containerLink">
     <button [routerLink]="['/']" routerLinkActive="active">Home</button>
     <button [routerLink]="['/about']" routerLinkActive="active">About</button>

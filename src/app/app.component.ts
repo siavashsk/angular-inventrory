@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular';
-  constructor(private router: Router) {}
+  constructor(private router: Router, public authService: AuthService) {}
 
   navigateToHome() {
     this.router.navigateByUrl('/');
@@ -21,5 +22,13 @@ export class AppComponent {
 
   navigateToUsers() {
     this.router.navigateByUrl('/users');
+  }
+
+  toggleLogin() {
+    if (this.authService.isAuthenticated()) {
+      this.authService.logout();
+    } else {
+      this.authService.login();
+    }
   }
 }
