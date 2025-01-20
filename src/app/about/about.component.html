@@ -1,0 +1,13 @@
+<div class="about">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <input type="text" id="name" ngModel placeholder="Your name" />
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let user of users">{{ user.name }}</li>
+  </ul>
+</div>
