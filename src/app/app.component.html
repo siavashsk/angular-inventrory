@@ -1,15 +1,5 @@
 <main>
-  <button (click)="toggleLogin()">
-    {{ authService.isAuthenticated() ? "Logout" : "Login" }}
-  </button>
-  <nav class="containerLink">
-    <button [routerLink]="['/']" routerLinkActive="active">Home</button>
-    <button [routerLink]="['/about']" routerLinkActive="active">About</button>
-    <button [routerLink]="['/users']" routerLinkActive="active">Users</button>
-    <button [routerLink]="['/lifecycle']" routerLinkActive="active">
-      LifeCycle
-    </button>
-  </nav>
+  <app-header></app-header>
 </main>
 
 <router-outlet></router-outlet>

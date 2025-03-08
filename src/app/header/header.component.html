@@ -1,0 +1,21 @@
+<header>
+  <div class="headerWrapper">
+    <div class="loginIcon" (click)="toggleLogin()">
+      {{ authService.isAuthenticated() ? "Logout" : "Login" }}
+    </div>
+    <nav class="containerLink">
+      <button
+        [routerLink]="['/']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </button>
+      <button [routerLink]="['/about']" routerLinkActive="active">About</button>
+      <button [routerLink]="['/users']" routerLinkActive="active">Users</button>
+      <button [routerLink]="['/lifecycle']" routerLinkActive="active">
+        LifeCycle
+      </button>
+    </nav>
+  </div>
+</header>

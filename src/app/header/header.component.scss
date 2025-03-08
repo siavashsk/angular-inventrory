@@ -1,0 +1,36 @@
+.headerWrapper {
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+.containerLink {
+  display: flex;
+  gap: 10px;
+  font-size: larger;
+}
+
+.containerLink button {
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #333;
+  cursor: pointer;
+}
+.loginIcon {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav.containerLink button.active {
+  background-color: #007bff;
+  color: white;
+}
