@@ -2,6 +2,7 @@ import { RouterModule } from '@angular/router';
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   model,
   signal,
 } from '@angular/core';
@@ -13,6 +14,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 interface ITodo {
   id: number;
@@ -23,6 +26,7 @@ interface ITodo {
 @Component({
   selector: 'app-root',
   imports: [
+    ConfirmationComponent,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
@@ -33,6 +37,7 @@ interface ITodo {
     MatCheckboxModule,
     FormsModule,
     CommonModule,
+    MatDialogModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -42,6 +47,8 @@ export class AppComponent {
   todoList = signal<ITodo[]>([]);
 
   description = model('');
+
+  readonly dialog = inject(MatDialog);
 
   save(): void {
     const obj: ITodo = {
@@ -55,7 +62,18 @@ export class AppComponent {
   }
 
   checkmarkChanged(index: number): void {
-    this.todoList()[index].done = this.todoList()[index].done;
+    this.todoList()[index].done = !this.todoList()[index].done;
     this.todoList.set(this.todoList());
+  }
+
+  deleteConfirmation(item: ITodo): void {
+    this.dialog
+      .open(ConfirmationComponent, {
+        width: '250px',
+      })
+      .afterClosed()
+      .subscribe((res: any) => {
+        console.log(res);
+      });
   }
 }

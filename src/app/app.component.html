@@ -22,8 +22,12 @@
           </mat-checkbox>
         </div>
         <div>
+          @if(item.done){ 
+
+          }
+
           <mat-icon matSuffix>edit</mat-icon>&nbsp;
-          <mat-icon matSuffix>delete</mat-icon>
+          <mat-icon matSuffix (click)="deleteConfirmation(item)">delete</mat-icon>
         </div>
       </div>
       } @empty {
