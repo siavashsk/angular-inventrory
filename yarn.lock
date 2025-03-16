@@ -112,10 +112,10 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
-"@angular/animations@^19.0.0":
-  version "19.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-19.1.1.tgz#e8febe53f18fc1c6ae011a72bf22e8a2797a66e3"
-  integrity sha512-MWZKQSFBr7iEfLH4tSpsjjC/Afq8Udp4v6kv4YGRcXuJKn8cL6KZ+8nPFkZACYPNrB/5jrWN27HGjWWlO2Z2Hg==
+"@angular/animations@^19.2.2":
+  version "19.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-19.2.2.tgz#fc199542273cf9e583c42c0b64fd8db245db5b11"
+  integrity sha512-WG+0IBzS77WxqGhK8dcZdt5D0doe9wpfeSfKArJwLeRvGzG+4fYEmajGusklAcxnP0R6LzUkVNHrfwJspLvyEw==
   dependencies:
     tslib "^2.3.0"
 
@@ -151,6 +151,15 @@
     watchpack "2.4.2"
   optionalDependencies:
     lmdb "3.2.2"
+
+"@angular/cdk@^19.2.3":
+  version "19.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.2.3.tgz#9881449edab344330a078d6a4c9d01f3b0db7002"
+  integrity sha512-hTyYjdx9T572TblqlLDv54U7ro1/HXr3/2a++A+t8ZkcKLyI+/0Yfu6OsrWTpl2OsRYFZ0QwvbyI8ZLUIZPkqQ==
+  dependencies:
+    tslib "^2.3.0"
+  optionalDependencies:
+    parse5 "^7.1.2"
 
 "@angular/cli@^19.0.6":
   version "19.1.2"
@@ -214,6 +223,13 @@
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-19.1.1.tgz#98b98e54659e013047137b1d7c7b39875a677a3f"
   integrity sha512-MtvoAeOXa2v+24U+5BMwmJpbQs/SQ296u+mJiZ/hIuuB/XBZdlPMzGg0U9ENDg6kwwoZIypcgiQ0/+gIwxlCSw==
+  dependencies:
+    tslib "^2.3.0"
+
+"@angular/material@^19.2.3":
+  version "19.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.2.3.tgz#2911b5b4cf8494e57691fe4be223d5657edcb7a0"
+  integrity sha512-yGe8oLT4b0Krvit6lq9SEShHoiSvC1dpMpI6dKSFk9JkVitemyex6bPzIow/0cNR3TDcXMFtpl/kc1L/EVaUuA==
   dependencies:
     tslib "^2.3.0"
 
@@ -5121,7 +5137,7 @@ parse5-sax-parser@^7.0.0:
   dependencies:
     parse5 "^7.0.0"
 
-parse5@^7.0.0:
+parse5@^7.0.0, parse5@^7.1.2:
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-7.2.1.tgz#8928f55915e6125f430cc44309765bf17556a33a"
   integrity sha512-BuBYQYlv1ckiPdQi/ohiivi9Sagc9JG+Ozs0r7b/0iK3sKmrb0b9FdWdBbOdx6hBCM/F9Ir82ofnBhtZOjCRPQ==
