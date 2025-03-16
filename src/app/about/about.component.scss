@@ -1,3 +1,16 @@
-.about{
-    
+.about {
+}
+.spellWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.spellItem {
+  padding: 10px 20px;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  background-color: rgb(74, 38, 172);
+  color: white;
 }

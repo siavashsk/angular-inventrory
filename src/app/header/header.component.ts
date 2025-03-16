@@ -1,5 +1,5 @@
 import { Router, RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent {
   constructor(private router: Router, public authService: AuthService) {}
+  title = signal('Signal');
+
   toggleLogin() {
     if (this.authService.isAuthenticated()) {
       this.authService.logout();

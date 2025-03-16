@@ -3,6 +3,7 @@
     <div class="loginIcon" (click)="toggleLogin()">
       {{ authService.isAuthenticated() ? "Logout" : "Login" }}
     </div>
+    <div>{{ title() }}</div>
     <nav class="containerLink">
       <button
         [routerLink]="['/']"

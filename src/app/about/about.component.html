@@ -1,4 +1,18 @@
 <div class="about">
   <h1>{{ title }}</h1>
-  <p>{{ description }}</p>
+
+  <h2>Spells</h2>
+  <div class="spellWrapper">
+    @defer { @for (spell of spells(); track spell.index){
+    <div class="spellItem">
+      <h3>{{ spell.spell }}</h3>
+      <p>index: {{ spell.index }}</p>
+      <p>{{ spell.use }}</p>
+    </div>
+    } }@placeholder {
+    <p>Your spells</p>
+    } @loading {
+    <p>Loading spells</p>
+    }
+  </div>
 </div>

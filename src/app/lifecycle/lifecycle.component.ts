@@ -1,10 +1,12 @@
 import {
   AfterViewInit,
   Component,
+  computed,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
+  signal,
   SimpleChanges,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +23,10 @@ export class LifecycleComponent
   showComponent = true;
   dynamicTitle = 'Hello Lifecycle!';
   @Input() title!: string;
+
+  tasks = signal([]);
+  count = computed(() => this.tasks().length);
+  doneCount = computed(() => this.tasks().filter((it: any) => it?.done).length);
 
   constructor() {
     console.log('Constructor: Component instance created.');
