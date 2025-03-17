@@ -50,6 +50,8 @@ export class AppComponent {
 
   readonly dialog = inject(MatDialog);
 
+  selectedIndex: number = -1;
+
   save(): void {
     const obj: ITodo = {
       description: this.description(),
@@ -66,14 +68,29 @@ export class AppComponent {
     this.todoList.set(this.todoList());
   }
 
-  deleteConfirmation(item: ITodo): void {
+  deleteConfirmation(index: number): void {
     this.dialog
       .open(ConfirmationComponent, {
         width: '250px',
       })
       .afterClosed()
       .subscribe((res: any) => {
-        console.log(res);
+        if (res === 'YES') {
+          this.todoList.update((list) => list.filter((_, i) => i !== index));
+        }
       });
+  }
+
+  updateItem() {
+    if (this.selectedIndex >= 0) {
+      this.todoList()[this.selectedIndex].description = this.description();
+      this.description.set('');
+      this.selectedIndex = -1;
+    }
+  }
+
+  editItem(i: number, item: ITodo): void {
+    this.selectedIndex = i;
+    this.description.set(item.description);
   }
 }

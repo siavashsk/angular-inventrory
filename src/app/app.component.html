@@ -4,31 +4,49 @@
       <mat-card-title>TODO list project</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+      @if(selectedIndex >= 0){
+      <div class="error-container">
+        <p>Editing Mode</p>
+      </div>
+      }
+      <div></div>
+
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Describe what to do?</mat-label>
           <input matInput placeholder="Placeholder" [(ngModel)]="description" />
+          @if(selectedIndex >= 0){
+
+          <mat-icon matSuffix (click)="updateItem()">save_as</mat-icon>
+          } @else{
+
           <mat-icon matSuffix (click)="save()">save</mat-icon>
+          }
         </mat-form-field>
       </div>
 
       @for ( item of todoList(); track item.id; let i = $index){
       <div class="listing">
         <div>
-          <mat-checkbox (click)="checkmarkChanged(i)">
+          <mat-checkbox
+            (click)="checkmarkChanged(i)"
+            [disabled]="selectedIndex >= 0"
+          >
             <span [ngClass]="item.done ? 'crossover' : ''">{{
               item.description
             }}</span>
           </mat-checkbox>
         </div>
+        @if(selectedIndex < 0){
         <div>
-          @if(item.done){ 
+          @if(!item.done){
 
+          <mat-icon matSuffix (click)="editItem(i, item)">edit</mat-icon>&nbsp;
           }
 
-          <mat-icon matSuffix>edit</mat-icon>&nbsp;
-          <mat-icon matSuffix (click)="deleteConfirmation(item)">delete</mat-icon>
+          <mat-icon matSuffix (click)="deleteConfirmation(i)">delete</mat-icon>
         </div>
+        }
       </div>
       } @empty {
       <div class="error-container">
